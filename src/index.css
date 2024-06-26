@@ -27,7 +27,7 @@ code {
 }
 
 .note-new{
-  background-color: #cb6ed7;
+  background-color: #fc9c57;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
@@ -39,7 +39,7 @@ code {
 textarea{
   border: none;
   resize: none;
-  background-color: #cb6ed7;
+  background-color: #fc9c57;
 }
 
 textarea:focus{
@@ -59,17 +59,22 @@ textarea:focus{
 }
 
 .note{
-  background-color: #dd66aa;
+  background-color: #f4f889;
   border-radius: 10px;
   padding: 1rem;
   min-height: 170px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  white-space: pre-wrap;
 }
 
 .note-footer{
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.delete-icon{
+  cursor: pointer;
 }
