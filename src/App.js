@@ -14,11 +14,12 @@ const App = () => {
     if (savedNotes) {
       setNotes(savedNotes);
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
+    console.log("Saving notes to localStorage", notes);
     localStorage.setItem('notes-app-data', JSON.stringify(notes));
-  }, [notes])
+  }, [notes]);
 
   const addNote = (text) => {
     //console.log(text);
@@ -38,16 +39,18 @@ const App = () => {
   };
 
   return (
-    <div className={`${darkMode && 'dark-mode'}`}>
-    <div className="container">
-      <Header handleToggleDarkMode={setDarkMode}/>
-      <Search handleSearchNote={setSearchText} />
-      <NotesList
-        notes={notes.filter((note) => note.text.toLowerCase().includes(searchText))}
-        handleAddNote={addNote}
-        handleDeleteNote={deleteNote}
-      />
-    </div>
+    <div className={`${darkMode && "dark-mode"}`}>
+      <div className="container">
+        <Header handleToggleDarkMode={setDarkMode} />
+        <Search handleSearchNote={setSearchText} />
+        <NotesList
+          notes={notes.filter((note) =>
+            note.text.toLowerCase().includes(searchText)
+          )}
+          handleAddNote={addNote}
+          handleDeleteNote={deleteNote}
+        />
+      </div>
     </div>
   );
 };
